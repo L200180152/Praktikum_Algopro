@@ -1,0 +1,5 @@
+berkas = open("L200180152", "w")
+berkas.write("NIM saudara L200180152.""\n")
+berkas.write("25-07-2000.""\n")
+berkas.write("MU'TAZ AL FARISI")
+berkas.close()
