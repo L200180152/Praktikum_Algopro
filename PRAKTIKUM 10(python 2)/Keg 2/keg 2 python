@@ -1,0 +1,35 @@
+#KEG 2
+import socket
+import platform
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind(("", 50003))
+s.listen(5)
+print "server sudah siap"
+d = ""
+
+while d.lower() != "quit":
+    komm, addr = s.accept()
+    while d.lower() != "quit":
+        d = komm.recv(1024)
+        if d.lower() == "quit":
+            s.close()
+            break
+        print "perintah: ", d
+        if d.lower() == "machine":
+            respon = platform.machine()
+            komm.send(respon)
+        elif d.lower() == "release":
+            respon = platform.release()
+            komm.send(respon)
+        elif d.lower() == "system":
+            respon = platform.system()
+            komm.send(respon)
+        elif d.lower() == "version":
+            respon = platform.version()
+            komm.send(respon)
+        elif d.lower() == "node":
+            respon = platform.node()
+            komm.send(respon)
+        else:
+            komm.send("maaf, perintah tidak di mengerti")
