@@ -1,0 +1,13 @@
+print """<DOCTYPE html>
+
+<html>
+        <head>
+                <title>Kegiatan 2</title>
+        </head>
+        <body>
+                <table>
+                        <tr>
+                                <th colspan=2>Data Diri</th>
+                        </tr>
+                        <tr>
+                                <td rowspan=5><img src
